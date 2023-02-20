@@ -1,0 +1,23 @@
+[
+  {
+    "title": "The Shawshank Redemption",
+    "date": "1994-09-23",
+    "actors": "Tim Robbins, Morgan Freeman, Bob Gunton, William Sadler, Clancy Brown",
+    "image": "https://via.placeholder.com/400x200",
+    "rating": "⭐⭐⭐⭐⭐"
+  },
+  {
+    "title": "The Godfather",
+    "date": "1972-03-24",
+    "actors": "Al Pacino, Marlon Brando, James Caan, Richard S. Castellano, Robert Duvall, Sterling Hayden",
+    "image": "https://via.placeholder.com/400x200",
+    "rating": "⭐⭐⭐⭐⭐"
+  },
+  {
+    "title": "Interstellar",
+    "date": "2014-11-07",
+    "actors": "Matthew McConaughey, Anne Hathaway, Jessica Chastain, Bill Irwin, Ellen Burstyn, Michael Caine, Wes Bentley, Casey Affleck",
+    "image": "https://via.placeholder.com/400x200",
+    "rating": "⭐⭐⭐⭐⭐"
+  }
+]
