@@ -1,22 +1,26 @@
 import React, { useState, useEffect } from 'react';
-import movieData from './movies.json';
 
-function MovieList() {
-    const [movies, setMovies] = useState([]);
 
-    useEffect(() => {
-        setMovies(movieData);
-    }, []);
+function MovieList(props) {
+
+    console.log(props.movies)
+    let myMovies = props.movies;
+    //let delMovie = props.deleteMovie;
+
 
     return (
         <div className="movieBlockContainer">
-            {movies.map((movie) => (
-                <div className="movieBlock">
+            {myMovies.map((movie) => (
+                <div key={movie.id} className="movieBlock">
                     <h1>{movie.title}</h1>
                     <img src={movie.image}/>
                     <h5>Released: {movie.date}</h5>
                     <p>{movie.actors}</p>
                     <p>{movie.rating}</p>
+
+                    <button onClick={() => {
+                        props.deleteMovie(movie.id);
+                    }}>Delete</button>
                 </div>
             ))}
         </div>
