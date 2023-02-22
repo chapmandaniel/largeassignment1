@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 
 function MovieList(props) {
 
-    console.log(props.movies)
     let myMovies = props.movies;
     //let delMovie = props.deleteMovie;
 

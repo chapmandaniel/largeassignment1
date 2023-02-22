@@ -12,6 +12,7 @@ function App() {
         setMovies(movies.filter(movie => movie.id !== id))
     }
 
+
     useEffect(() => {
         fetch("./json/movies.json")
             .then(response => response.json())
@@ -25,11 +26,11 @@ function App() {
     if(movies !== null){
         return (
             <div className="App">
-                <Navigation />
                 <Router>
+                    <Navigation />
                     <Routes>
                         <Route path="/" element={<MovieList movies={movies} deleteMovie={deleteMovie} />} />
-                        <Route path="/addmovie" element={<AddMovie />} />
+                        <Route path="/addMovie" element={<AddMovie movies={movies} setMovies={setMovies} />} />
                     </Routes>
                 </Router>
             </div>

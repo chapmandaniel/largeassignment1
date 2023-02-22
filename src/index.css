@@ -28,13 +28,14 @@ code {
 
 .movieBlockContainer {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
 }
 
 .movieBlock {
   margin: 20px;
-  max-width: 33%;
+  width: 27%;
   padding: 20px;
   background-color: gainsboro;
 }
