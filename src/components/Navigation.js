@@ -9,10 +9,10 @@ function Navigation() {
 
            <Nav variant="pills" defaultActiveKey="/home" className={"pageNavigation"}>
                <Nav.Item className={"navItem"}>
-                   <Link to={"/"}>Home</Link>
+                   <Link to={"/"}>Movie Reviews</Link>
                </Nav.Item>
                <Nav.Item className={"navItem"}>
-                   <Link to={"/addMovie"}>Add Movie</Link>
+                   <Link to={"/submit-review"}>Submit New Review</Link>
                </Nav.Item>
            </Nav>
 

@@ -30,7 +30,7 @@ function App() {
                     <Navigation />
                     <Routes>
                         <Route path="/" element={<MovieList movies={movies} deleteMovie={deleteMovie} />} />
-                        <Route path="/addMovie" element={<AddMovie movies={movies} setMovies={setMovies} />} />
+                        <Route path="/submit-review" element={<AddMovie movies={movies} setMovies={setMovies} />} />
                     </Routes>
                 </Router>
             </div>

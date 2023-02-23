@@ -13,7 +13,7 @@ function AddMovie(props){
         "title": "",
         "date": "",
         "actors": "",
-        "image": "",
+        "image": "./images/imdb.jpg",
         "rating": ""
     }
 
