@@ -1,4 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Alert from 'react-bootstrap/Alert';
+import Card from 'react-bootstrap/Card';
+
+
 
 function AddMovie(props){
 
@@ -14,36 +20,90 @@ function AddMovie(props){
     const [addMovie, setAddMovie] = useState(newMovie);
     const [isSubmitted, setIsSubmitted] = useState(false);
 
+
     const handleSubmit = (event) => {
+        newMovie.id = props.movies.length + 1;
         event.preventDefault();
         setAddMovie(newMovie);
         props.movies.push(addMovie);
+        setIsSubmitted(true);
     };
 
 
-    return(
-        <div>
-            {isSubmitted ? <h1>Movie Added</h1> : null}
-            {isSubmitted ? null : <div>
-            <h2>Add A Movie Rating</h2>
-            <form onSubmit={handleSubmit}>
-                <label>Title</label>
-                <input type="text" id="title" onChange={(event) => newMovie.title = event.target.value} />
+        return(
+        // <div>
+        //     <h2>Add A Movie Rating</h2>
+        //     <form onSubmit={handleSubmit}>
+        //         <label>Title</label>
+        //         <input type="text" id="title" onChange={(event) => newMovie.title = event.target.value} />
+        //
+        //         <label>Date</label>
+        //         <input type="date" id="date"  onChange={(event) => newMovie.date = event.target.value} />
+        //
+        //         <label>Actors</label>
+        //         <input type="text" id="actors" onChange={(event) => newMovie.actors = event.target.value} />
+        //
+        //         <label>Image</label>
+        //         <input type="url" id="image" onChange={(event) => newMovie.image = event.target.value} />
+        //
+        //         <label>Rating</label>
+        //         <input type="number" id="rating" onChange={(event) => newMovie.rating = getStarSymbols(event.target.value)} />
+        //
+        //         <button type="submit">Submit</button>
+        //     </form>
 
-                <label>Date</label>
-                <input type="date" id="date"  onChange={(event) => newMovie.date = event.target.value} />
+        <div id="add-form">
 
-                <label>Actors</label>
-                <input type="text" id="actors" onChange={(event) => newMovie.actors = event.target.value} />
+            <Card className={"w-50 mx-auto mt-xxl-5 bg-secondary"}>
+                <Card.Body>
+                    {isSubmitted && (
+                        <Alert key={'success'} variant={'success'}>
+                            Movie Added Successfully!
+                        </Alert>
+                    )}
 
-                <label>Image</label>
-                <input type="url" id="image" onChange={(event) => newMovie.image = event.target.value} />
+                    <Form onSubmit={handleSubmit}>
+                        <Form.Group className="mb-3" controlId="a">
+                            <Form.Label>Title</Form.Label>
+                            <Form.Control type="text" placeholder="Enter Title" onChange={(event) => newMovie.title = event.target.value} />
+                        </Form.Group>
 
-                <label>Rating</label>
-                <input type="number" id="rating" onChange={(event) => newMovie.rating = event.target.value} />
+                        <Form.Group className="mb-3" controlId="formBasicDate">
+                            <Form.Label>Date</Form.Label>
+                            <Form.Control type="date" placeholder="Enter Date" onChange={(event) => newMovie.date = event.target.value} />
+                        </Form.Group>
 
-                <button type="submit">Submit</button>
-            </form></div>}
+                        <Form.Group className="mb-3" controlId="b">
+                            <Form.Label>Actors</Form.Label>
+                            <Form.Control type="text" placeholder="Enter Actors" onChange={(event) => newMovie.actors = event.target.value} />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="c">
+                            <Form.Label>Rating</Form.Label>
+                            <Form.Control type="number" placeholder="Rate this film 1 to 5 Stars" onChange={(event) => newMovie.rating = event.target.value} />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="d">
+                            <Form.Label>Image</Form.Label>
+                            <Form.Select id="moviePoster" onChange={(e) => {
+                                newMovie.image = e.target.value;
+                            }}>
+                                <option value="./images/imdb.jpg">Generic IMDB Image</option>
+                                <option value="./images/godfather.jpg">The Godfather</option>
+                                <option value="./images/basterds.jpg">Inglorious Basterds</option>
+                            </Form.Select>
+                        </Form.Group>
+
+
+
+                        <Button variant="primary" type="submit">
+                            Submit
+                        </Button>
+                    </Form>
+
+                </Card.Body>
+            </Card>
+
         </div>
 
     );

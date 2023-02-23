@@ -1,15 +1,21 @@
 import {Link, useNavigate} from 'react-router-dom';
+import Nav from 'react-bootstrap/Nav';
+
+
 
 
 function Navigation() {
   return (
-        // create a navigation component using React Router
-        // the navigation component should have a link to the home page and the add movie page
-        // the navigation component should have a button that when clicked will navigate to the home page
-       <nav className={"pageNavigation"}>
-            <Link to={"/"} className={"navItem"}>Home</Link>
-            <Link to={"/addMovie"} className={"navItem"}>Add Movie</Link>
-       </nav>
+
+           <Nav variant="pills" defaultActiveKey="/home" className={"pageNavigation"}>
+               <Nav.Item className={"navItem"}>
+                   <Link to={"/"}>Home</Link>
+               </Nav.Item>
+               <Nav.Item className={"navItem"}>
+                   <Link to={"/addMovie"}>Add Movie</Link>
+               </Nav.Item>
+           </Nav>
+
   );
 }
 
